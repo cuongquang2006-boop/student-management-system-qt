@@ -2,6 +2,9 @@
 ---
 ## GOAL
 ### 1 Student ✔
+- Login screen with username and password, user can create it if they don't have
+- Done CRUD, show student information with table like excel
+- Save information with Json file
 ### 2 Class
 ### 3 Subject
 ### 4 Score
