@@ -6,6 +6,10 @@
 - Done CRUD, show student information with table like excel
 - Save information with Json file
 ### 2 Class
+- Class information(Done)
+- Detail Information Student(continue)
+- Up image student from user device(continue)
+- Save infor with class(Done)
 ### 3 Subject
 ### 4 Score
 ### 5 Dashboard
