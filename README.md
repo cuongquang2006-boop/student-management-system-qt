@@ -2,14 +2,14 @@
 ---
 ## GOAL
 ### 1 Student ✔
-- Login screen with username and password, user can create it if they don't have
-- Done CRUD, show student information with table like excel
-- Save information with Json file
-### 2 Class
-- Class information(Done)
-- Detail Information Student(continue)
-- Up image student from user device(continue)
-- Save infor with class(Done)
+- Login screen with username and password. Users can create an account if they don't have one.
+- Implement CRUD operations and display student information in a table (similar to Excel).
+- Save student data in a JSON file.
+### 2 Class ✔
+- Manage class information.
+- View detailed information for each student.
+- Upload student images from the user's device and store them with student data.
+- Save student information along with their class.
 ### 3 Subject
 ### 4 Score
 ### 5 Dashboard
@@ -19,6 +19,4 @@
 ### 9 Report
 ### 10 Settings
 ---
-## Complete (10%)
----
-- **"Code ít ít thôi chứ không là khùng á"** , thằng năm 2 nào đó bảo vậy :)))
+## Complete (20%)
