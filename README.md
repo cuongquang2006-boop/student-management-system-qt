@@ -9,10 +9,11 @@
 - View detailed information for each student.
 - Upload student images from the user's device and store them with student data.
 - Save student information along with their class.
-### 2 Dashboard
-### 3 Scores
-### 4 Courses
-### 5 Payment
-### 6 Database
+
+###  Scores
+###  Courses
+###  Payment
+###  Dashboard
+###  Database
 ---
 ## Complete (20%)
