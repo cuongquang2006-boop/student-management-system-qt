@@ -21,6 +21,6 @@
 
 ### 3 Scores ✔
 
-###  Dashboard 4
+### 4 Dashboard ✔
 ---
-## Complete (2/6)
+## Complete (100%)
