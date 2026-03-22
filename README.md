@@ -21,6 +21,5 @@
 
 ###  Scores 2
 ###  Dashboard 4
-###  Database 5
 ---
 ## Complete (2/6)
