@@ -1,0 +1,68 @@
+{
+    "courses": [
+        {
+            "class": "CNTT1",
+            "id": "98238823",
+            "name": "Epstein Course - 219312",
+            "students": [
+                "089236123",
+                "088999999"
+            ],
+            "teacher": "Epstein Daddy"
+        }
+    ],
+    "scores": [
+        {
+            "courseId": "98238823",
+            "final": 10,
+            "process": 10,
+            "studentId": "089236123",
+            "total": 10
+        },
+        {
+            "courseId": "98238823",
+            "final": 9.5,
+            "process": 9.5,
+            "studentId": "088999999",
+            "total": 9.5
+        }
+    ],
+    "students": [
+        {
+            "age": 40,
+            "class": "CNTT1",
+            "gender": "Male",
+            "id": "089236123",
+            "image": "",
+            "major": "Information Technology",
+            "name": "Diddy"
+        },
+        {
+            "age": 28,
+            "class": "SE1",
+            "gender": "Other",
+            "id": "089928382",
+            "image": "",
+            "major": "Software Engineering",
+            "name": "Trịnh Trần Phương Tuấn"
+        },
+        {
+            "age": 52,
+            "class": "Marketing1",
+            "gender": "Male",
+            "id": "088883848",
+            "image": "",
+            "major": "Marketing",
+            "name": "Epstein"
+        },
+        {
+            "age": 100,
+            "class": "CNTT1",
+            "gender": "Other",
+            "id": "088999999",
+            "image": "",
+            "major": "Information Technology",
+            "name": "Kumalala"
+        }
+    ]
+}
