@@ -40,17 +40,9 @@
 ## 🎬 Demo
 
 ### Login
-![Login](gifs/login-demo.gif)
+![Login](img/login.png)
 
-### Student Manager
-![Student](gifs/student-crud.gif)
+### Menu
+![Student](img/ui.gif)
 
-### Courses
-![Courses](gifs/course-dialog.gif)
-
-### Scores
-![Scores](gifs/scores-auto-calc.gif)
-
-### Dashboard
-![Dashboard](gifs/dashboard.gif)
 
