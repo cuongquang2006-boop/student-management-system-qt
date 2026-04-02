@@ -41,11 +41,11 @@
 
 ### Login  
 <p align="center">
-  <img src="img/login.png" width="900"/>
+  <img src="img/login.png" width="800"/>
 </p>
 
 ### Menu  
 <p align="center">
-  <img src="img/ui.gif" width="900"/>
+  <img src="img/ui.gif" width="800"/>
 </p>
 
