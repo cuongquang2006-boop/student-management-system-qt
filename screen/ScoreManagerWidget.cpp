@@ -45,19 +45,16 @@ void ScoreManagerWidget::setupUI()
 
     QVBoxLayout* formLayout = new QVBoxLayout;
 
-    // ===== Row 1: Course + Student (dài) =====
     QHBoxLayout* topRow = new QHBoxLayout;
-    topRow->addWidget(courseBox, 2);   // stretch lớn hơn
+    topRow->addWidget(courseBox, 2);   
     topRow->addWidget(studentBox, 2);
 
-    // ===== Row 2: Score + Button (ngắn) =====
     QHBoxLayout* bottomRow = new QHBoxLayout;
     bottomRow->addWidget(processEdit, 1);
     bottomRow->addWidget(finalEdit, 1);
     bottomRow->addWidget(addBtn);
     bottomRow->addWidget(deleteBtn);
 
-    // add vào form
     formLayout->addLayout(topRow);
     formLayout->addLayout(bottomRow);
 
@@ -74,7 +71,6 @@ void ScoreManagerWidget::setupUI()
     mainLayout->addWidget(table);
 }
 
-// CONNECTION
 void ScoreManagerWidget::setupConnections()
 {
     QPushButton* addBtn = findChild<QPushButton*>("addBtn");
@@ -89,7 +85,6 @@ void ScoreManagerWidget::setupConnections()
     connect(courseBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
         this, &ScoreManagerWidget::onCourseChanged);
 
-    // auto fill score
     connect(studentBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
         this, [this](int)
         {
@@ -111,7 +106,6 @@ void ScoreManagerWidget::setupConnections()
         });
 }
 
-// SET DATA
 void ScoreManagerWidget::setData(const QVector<Student>& students,
     const QVector<Course>& courses,
     const QVector<Score>& scores)
@@ -139,7 +133,6 @@ void ScoreManagerWidget::setData(const QVector<Student>& students,
     refreshTable();
 }
 
-// UPDATE STUDENT
 void ScoreManagerWidget::onCourseChanged(int)
 {
     updateStudentBox();
@@ -173,7 +166,6 @@ void ScoreManagerWidget::updateStudentBox()
     }
 }
 
-// ADD
 void ScoreManagerWidget::addOrUpdateScore()
 {
     QString sid = studentBox->currentData().toString();
@@ -214,7 +206,6 @@ void ScoreManagerWidget::addOrUpdateScore()
     updateStudentBox();
 }
 
-// DELETE
 void ScoreManagerWidget::deleteScore()
 {
     int row = table->currentRow();
@@ -226,7 +217,6 @@ void ScoreManagerWidget::deleteScore()
     updateStudentBox();
 }
 
-// REFRESH
 void ScoreManagerWidget::refreshTable()
 {
     table->setRowCount(scoreList.size());
@@ -253,7 +243,6 @@ void ScoreManagerWidget::refreshTable()
     }
 }
 
-// FIX LỖI LINKER
 const QVector<Score>& ScoreManagerWidget::getScores() const
 {
     return scoreList;
