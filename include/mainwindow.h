@@ -12,7 +12,7 @@
 #include "ScoreManagerWidget.h"
 #include "Student.h"
 #include "Course.h"
-#include "DashboardWidget.h"   //  thêm
+#include "DashboardWidget.h"   
 
 class MainWindow : public QMainWindow
 {
@@ -21,7 +21,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget* parent = nullptr);
 
-    //các UI tập hợp trong stack
     CoursesManagerWidget* courseWidget;
     StudentManagerWidget* studentWidget;
     ScoreManagerWidget* scoreWidget;
