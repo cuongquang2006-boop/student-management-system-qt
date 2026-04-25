@@ -15,7 +15,6 @@ DashboardWidget::DashboardWidget(QWidget* parent)
 {
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
 
-    // ===== Stats =====
     QHBoxLayout* statsLayout = new QHBoxLayout;
     auto createCard = [](QString title, QLabel*& valueLabel) {
         QFrame* card = new QFrame;
@@ -34,7 +33,6 @@ DashboardWidget::DashboardWidget(QWidget* parent)
     statsLayout->addWidget(createCard("Scores", lblScoreCount));
     mainLayout->addLayout(statsLayout);
 
-    // ===== Top students table =====
     tableTop = new QTableWidget;
     tableTop->setColumnCount(4);
     tableTop->setHorizontalHeaderLabels({ "Rank","ID","Name","Score" });
@@ -43,7 +41,6 @@ DashboardWidget::DashboardWidget(QWidget* parent)
     mainLayout->addWidget(new QLabel("Top Students"));
     mainLayout->addWidget(tableTop);
 
-    // ===== Buttons =====
     QHBoxLayout* btnLayout = new QHBoxLayout;
     btnViewSchedule = new QPushButton("View Courses");
     btnSaveSchedule = new QPushButton("Save Courses");
@@ -53,7 +50,6 @@ DashboardWidget::DashboardWidget(QWidget* parent)
     btnLayout->addWidget(btnLoadSchedule);
     mainLayout->addLayout(btnLayout);
 
-    // connect
     connect(btnViewSchedule, &QPushButton::clicked, this, [this]() {
         ScheduleDialog dlg(this);
         dlg.setSchedule(m_courses);
@@ -110,7 +106,6 @@ void DashboardWidget::updateTopStudents()
     }
 }
 
-// ===== Save / Load =====
 void DashboardWidget::saveCourses()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "Save Courses", "", "*.json");
