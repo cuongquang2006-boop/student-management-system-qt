@@ -12,7 +12,6 @@
 #include <QMessageBox>
 #include <QLabel>
 
-// ================= CONSTRUCTOR =================
 CoursesManagerWidget::CoursesManagerWidget(QWidget* parent)
     : QWidget(parent)
 {
@@ -20,12 +19,10 @@ CoursesManagerWidget::CoursesManagerWidget(QWidget* parent)
     setupConnections();
 }
 
-// ================= UI =================
 void CoursesManagerWidget::setupUI()
 {
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
 
-    // ===== FORM =====
     idEdit = new QLineEdit;
     idEdit->setPlaceholderText("Course ID");
 
@@ -60,7 +57,6 @@ void CoursesManagerWidget::setupUI()
     formLayout->addWidget(addBtn);
     formLayout->addWidget(deleteBtn);
 
-    // ===== STUDENT AREA =====
     studentBox = new QComboBox;
 
     QPushButton* addStudentBtn = new QPushButton("Add Student");
@@ -75,7 +71,6 @@ void CoursesManagerWidget::setupUI()
     studentLayout->addWidget(addStudentBtn);
     studentLayout->addWidget(viewStudentsBtn);
 
-    // ===== TABLE =====
     table = new QTableWidget;
     table->setColumnCount(5);
     table->setHorizontalHeaderLabels(
@@ -86,13 +81,11 @@ void CoursesManagerWidget::setupUI()
     table->setSelectionMode(QAbstractItemView::SingleSelection);
     table->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-    // ===== ADD TO MAIN =====
     mainLayout->addLayout(formLayout);
     mainLayout->addLayout(studentLayout);
     mainLayout->addWidget(table);
 }
 
-// ================= CONNECTION =================
 void CoursesManagerWidget::setupConnections()
 {
     QPushButton* addBtn = findChild<QPushButton*>("addBtn");
@@ -119,7 +112,6 @@ void CoursesManagerWidget::setupConnections()
         });
 }
 
-//  SET DATA 
 void CoursesManagerWidget::setStudentList(const QVector<Student>& students)
 {
     studentList = students;
@@ -131,7 +123,6 @@ void CoursesManagerWidget::setCourses(const QVector<Course>& list)
     refreshTable();
 }
 
-// GET 
 const QVector<Course>& CoursesManagerWidget::getCourses() const
 {
     return courses;
@@ -142,7 +133,6 @@ const QVector<Student>& CoursesManagerWidget::getStudentList() const
     return studentList;
 }
 
-// ADD COURSE
 void CoursesManagerWidget::addCourse()
 {
     QString id = idEdit->text().trimmed();
@@ -187,7 +177,6 @@ void CoursesManagerWidget::addCourse()
     refreshTable();
 }
 
-// DELETE COURSE 
 void CoursesManagerWidget::deleteCourse()
 {
     int row = table->currentRow();
@@ -213,7 +202,6 @@ void CoursesManagerWidget::deleteCourse()
     studentBox->clear();
 }
 
-// ADD STUDENT 
 void CoursesManagerWidget::addStudentToCourse()
 {
     int row = table->currentRow();
@@ -232,7 +220,6 @@ void CoursesManagerWidget::addStudentToCourse()
     refreshTable();
 }
 
-//UPDATE COMBO
 void CoursesManagerWidget::updateStudentCombo(int row)
 {
     studentBox->clear();
@@ -250,7 +237,6 @@ void CoursesManagerWidget::updateStudentCombo(int row)
     }
 }
 
-// REFRESH 
 void CoursesManagerWidget::refreshTable()
 {
     table->setRowCount(courses.size());
@@ -279,7 +265,6 @@ void CoursesManagerWidget::refreshTable()
     }
 }
 
-// VALIDATION 
 bool CoursesManagerWidget::isValidCourseId(const QString& id)
 {
     QRegularExpression regex("^[A-Za-z0-9]+$");
@@ -292,7 +277,6 @@ bool CoursesManagerWidget::isValidTeacherName(const QString& name)
     return regex.match(name).hasMatch();
 }
 
-// VIEW STUDENTS 
 void CoursesManagerWidget::onViewStudents()
 {
     int row = table->currentRow();
