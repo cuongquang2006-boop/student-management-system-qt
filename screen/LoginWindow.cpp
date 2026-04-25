@@ -57,7 +57,6 @@ void LoginWindow::setupUI()
     setWindowTitle("Login");
     resize(700, 500);
 
-    // Style cho card
     setStyleSheet(R"(
         #formCard{
             background-color: rgba(255,255,255,0.06);
@@ -109,7 +108,6 @@ void LoginWindow::registerUser()
 
     for(const User& u : users)
     {
-        //không để trùng tên người dùng
         if(u.username == user)
         {
             QMessageBox::warning(this,"Error","Username exists");
