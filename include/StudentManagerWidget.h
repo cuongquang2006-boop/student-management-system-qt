@@ -21,17 +21,13 @@ public:
     StudentManagerWidget(QWidget *parent = nullptr);
 
 signals:
-    void backRequested();   // back to menu
+    void backRequested();   
 
 private:
 
-    //check save/not save
     bool modified = false;
-
     QVector<Student> students;
-
     QMap<QString, QStringList> majorClassMap;
-
     QTableWidget* table;
 
     QLineEdit* idEdit;
