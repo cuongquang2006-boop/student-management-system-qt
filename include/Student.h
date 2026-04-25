@@ -15,7 +15,7 @@ public:
     QString gender;
     QString major;
     QString className;
-    QString avatarPath;  ///student face image
+    QString avatarPath;  
 
     Student() {}
 
