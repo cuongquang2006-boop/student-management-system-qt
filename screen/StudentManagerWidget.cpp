@@ -21,10 +21,9 @@
 #include <QPropertyAnimation>
 #include <qwidgetaction.h>
 
-#include <QCloseEvent> //chặn out khi còn dữ liệu   
+#include <QCloseEvent> 
 
 
-//khoi tao
 StudentManagerWidget::StudentManagerWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -33,7 +32,6 @@ StudentManagerWidget::StudentManagerWidget(QWidget *parent)
     setupToolbar();
 }
 
-//thiet lap UI
 void StudentManagerWidget::setupUI()
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -47,8 +45,6 @@ void StudentManagerWidget::setupUI()
     mainLayout->addWidget(new QLabel("Search:"));
     mainLayout->addWidget(searchEdit);
 
-
-    // ===== TABLE AREA =====
     table = new QTableWidget;
 
     table->setColumnCount(7);
@@ -108,7 +104,6 @@ void StudentManagerWidget::setupUI()
         "Business Administration"
         });
 
-    // map Major with Class
     majorClassMap["Information Technology"] = { "CNTT1","CNTT2","CNTT3","CNTT4"};
     majorClassMap["Software Engineering"]   = { "SE1","SE2","SE3","SE4"};
     majorClassMap["Artificial Intelligence"]= { "AI1","AI2","AI3","AI4"};
@@ -118,7 +113,7 @@ void StudentManagerWidget::setupUI()
 
     QFormLayout *formLayout = new QFormLayout;
 
-    formLayout->addRow("", label);              // dòng trên ID
+    formLayout->addRow("", label);              
     formLayout->addRow("Student ID:",idEdit);
     formLayout->addRow("Name:",nameEdit);
     formLayout->addRow("Age:",ageSpin);
@@ -176,16 +171,14 @@ void StudentManagerWidget::setupUI()
     mainLayout->addLayout(formLayout);
     mainLayout->addLayout(btnLayout);
 
-    // layout riêng cho nút back
     QHBoxLayout *bottomLayout = new QHBoxLayout;
 
-    bottomLayout->addStretch();      // đẩy nút sang góc phải
+    bottomLayout->addStretch();      
     bottomLayout->addWidget(backBtn);
 
     mainLayout->addLayout(bottomLayout);
 }
 
-//check save or not save
 bool StudentManagerWidget::isModified() const
 {
     return modified;
@@ -225,7 +218,6 @@ void StudentManagerWidget::setupMenu()
     connect(saveAct, &QAction::triggered,
         this, &StudentManagerWidget::saveToFile);
 
-    // ===== LABEL SÁT FILE =====
     QLabel* noteLabel = new QLabel("  Only saves student list (no courses)");
     noteLabel->setStyleSheet("color: gray; font-size: 12px;");
 
@@ -262,7 +254,6 @@ void StudentManagerWidget::setupToolbar()
     mainLayout->insertWidget(0, toolbar);
 }
 
-//load len form
 void StudentManagerWidget::loadToForm(int row, int)
 {
     const Student& s = students[row];
@@ -275,8 +266,6 @@ void StudentManagerWidget::loadToForm(int row, int)
     classBox->setCurrentText(s.className);
 }
 
-
-//xoa form
 void StudentManagerWidget::clearForm()
 {
     idEdit->clear();
@@ -287,8 +276,6 @@ void StudentManagerWidget::clearForm()
     classBox->setCurrentText("<<None>>");
 }
 
-
-//lam moi bang
 void StudentManagerWidget::refreshTable()
 {
     table->setRowCount(students.size());
